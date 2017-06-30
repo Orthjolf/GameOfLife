@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameOfLife"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="856.716" Width="525">
     <Grid>
-        
+        <Canvas x:Name="GameField" HorizontalAlignment="Left" Height="252" Margin="117,23,0,0" VerticalAlignment="Top" Width="284">
+            <Canvas.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+            </Canvas.Background>
+            <Canvas.Effect>
+                <DropShadowEffect ShadowDepth="0" Direction="0" BlurRadius="20"/>
+            </Canvas.Effect>
+        </Canvas>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="57,280,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click"/>
+        <Button x:Name="NextGeneration" Content="NextGen" HorizontalAlignment="Left" Margin="57,307,0,0" VerticalAlignment="Top" Width="75" Click="NextGenButton_Click"/>
+
     </Grid>
 </Window>
