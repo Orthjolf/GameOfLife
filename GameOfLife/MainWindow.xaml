@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="856.716" Width="525">
     <Grid>
-        <Canvas x:Name="GameField" HorizontalAlignment="Left" Height="252" Margin="117,23,0,0" VerticalAlignment="Top" Width="284">
+        <Canvas x:Name="CanvasGameField" HorizontalAlignment="Left" Height="252" Margin="117,23,0,0" VerticalAlignment="Top" Width="284">
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
             </Canvas.Background>
