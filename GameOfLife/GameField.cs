@@ -57,6 +57,9 @@ namespace GameOfLife
             }      
         }
 
+        void setPosition(int x, int y) {
+        }
+
         private int getNumOfNeighbors(int x, int y) {
             int numOfNeighbors = 0;
                
