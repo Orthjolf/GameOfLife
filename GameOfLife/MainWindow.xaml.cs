@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace GameOfLife
 {
@@ -24,26 +25,44 @@ namespace GameOfLife
      * @*/
     public partial class MainWindow : Window
     {
+
+        private const int gameSpeed = 100;
+
         private GameField gameField;
+        private DispatcherTimer timer;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            
             gameField = new GameField(CanvasGameField);
             gameField.draw();
-            //@TODO: запускам новый поток, если игра не на паузе, то по кд генерим новые поколения
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(gameSpeed);
+            timer.Tick += NextGen;
+
         }
 
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-  
-        private void NextGenButton_Click(object sender, RoutedEventArgs e)
+        private void NextGen(object sender, EventArgs e)
         {
             gameField.makeNewGeneration();
+        }
+
+        private void RunLife(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+        }
+
+        private void SetPause(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private void NextGenButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(!timer.IsEnabled)
+                gameField.makeNewGeneration();
         }         
     }
 }

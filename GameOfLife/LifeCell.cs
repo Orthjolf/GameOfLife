@@ -9,13 +9,12 @@ namespace GameOfLife
 {
     public class LifeCell : UIElement
     {
-        private int size = 5;
+        public static int size = 5;
+        public Rectangle body;
         public bool alive = false;
         public int numbeOfNeighbors;
         public Vector position;
-        Brush brush;
-        public Rectangle body;
-
+     
         public LifeCell(int x, int y)
         {
             this.position.X = x * size;
@@ -24,8 +23,7 @@ namespace GameOfLife
             body = new Rectangle();
             body.Width = size;
             body.Height = size;
-            body.Fill = Brushes.Black;
-
+            
             Canvas.SetLeft(body, x * (size + 1));
             Canvas.SetTop(body, y * (size + 1));
             body.MouseDown += changeState;
@@ -33,11 +31,25 @@ namespace GameOfLife
 
         public void changeState(object sender, MouseButtonEventArgs e) {
             alive = !alive;
-            body.Fill = alive ? Brushes.Green : Brushes.Black; 
-            Console.Write(alive?"Жив\n":"Мертв\n");
+            setColor(alive);
+        }
+
+        public void dies() {
+            alive = false;
+            setColor(alive);
+        }
+
+        public void reborn() {
+            alive = true;
+            setColor(alive);
+        }
+
+        public void setColor(bool alive) {
+            body.Fill = alive ? Brushes.Blue : Brushes.White;
         }
 
         public void draw(Canvas GameField) {
+            body.Fill = Brushes.White;
             GameField.Children.Add(body);
         }
 

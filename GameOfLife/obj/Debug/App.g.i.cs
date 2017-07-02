@@ -61,7 +61,7 @@ namespace GameOfLife {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            GameOfLife.App app = new GameOfLife.App();
+            global::GameOfLife.App app = new global::GameOfLife.App();
             app.InitializeComponent();
             app.Run();
         }
