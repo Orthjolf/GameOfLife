@@ -12,7 +12,7 @@ namespace GameOfLife
         public static int size = 5;
         public Rectangle body;
         public bool alive = false;
-        public int numbeOfNeighbors;
+        public int numOfNeighbors;
         public Vector position;
      
         public LifeCell(int x, int y)
@@ -39,7 +39,7 @@ namespace GameOfLife
             setColor(alive);
         }
 
-        public void reborn() {
+        public void lives() {
             alive = true;
             setColor(alive);
         }
@@ -49,7 +49,7 @@ namespace GameOfLife
         }
 
         public void draw(Canvas GameField) {
-            body.Fill = Brushes.White;
+            setColor(alive);
             GameField.Children.Add(body);
         }
 
