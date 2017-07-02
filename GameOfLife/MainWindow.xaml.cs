@@ -28,7 +28,6 @@ namespace GameOfLife
         private const int gameSpeed = 100;
 
         private GameField gameField;
-        private GameField gameField1;
         private DispatcherTimer timer;
 
         public MainWindow()
@@ -36,9 +35,7 @@ namespace GameOfLife
             InitializeComponent();
             gameField = new GameField(CanvasGameField);
             gameField.draw();
-
-            gameField1 = new GameField(CanvasGameField1);
-            gameField1.draw();
+ 
           
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(gameSpeed);

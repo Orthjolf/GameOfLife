@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -33,6 +36,11 @@ namespace GameOfLife
                     lifeCells[x, y] = cell;
                 }
             }
+        }
+
+        public List MakeNewGeneration_v2(List aliveCells) {
+            Dictionary<LifeCell,ArrayList> board = new Dictionary<LifeCell, ArrayList>();
+            return aliveCells;
         }
 
         public void makeNewGeneration()

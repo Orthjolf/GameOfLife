@@ -13,11 +13,7 @@
             </Canvas.Background>
         </Canvas>
 
-      <Canvas x:Name="CanvasGameField1" HorizontalAlignment="Left" Height="252" Margin="0,400,0,0" VerticalAlignment="Top" Width="284">
-        <Canvas.Background>
-          <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
-        </Canvas.Background>
-      </Canvas>
+      
         <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="57,280,0,0" VerticalAlignment="Top" Width="75" Click="RunLife"/>
         <Button x:Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="57,330,0,0" VerticalAlignment="Top" Width="75" Click="SetPause"/>
         <Button x:Name="NextGeneration" Content="NextGen" HorizontalAlignment="Left" Margin="57,307,0,0" VerticalAlignment="Top" Width="75" Click="NextGenButton_Click"/>
