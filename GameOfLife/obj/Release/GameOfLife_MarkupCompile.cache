@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-e:\my documents\visual studio 2017\Projects\GameOfLife\GameOfLife\obj\Debug\
+e:\my documents\visual studio 2017\Projects\GameOfLife\GameOfLife\obj\Release\
 GameOfLife
 none
 false
-DEBUG;TRACE
+TRACE
 e:\my documents\visual studio 2017\Projects\GameOfLife\GameOfLife\App.xaml
 11151548125
 
-11422058621
+7-29224304
 13-2257555
 MainWindow.xaml;
 
-True
+False
 

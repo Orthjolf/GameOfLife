@@ -35,7 +35,8 @@ namespace GameOfLife
             InitializeComponent();
             gameField = new GameField(CanvasGameField);
             gameField.draw();
- 
+
+            gameField.setRandom();
           
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(gameSpeed);

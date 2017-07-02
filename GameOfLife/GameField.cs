@@ -11,6 +11,7 @@ namespace GameOfLife
 {
     internal class GameField : Canvas
     {
+        public HashSet<LifeCell> buffer;
         private int numCellsInRow;
         private int numCellsInColumn;
 
@@ -38,9 +39,17 @@ namespace GameOfLife
             }
         }
 
-        public List MakeNewGeneration_v2(List aliveCells) {
-            Dictionary<LifeCell,ArrayList> board = new Dictionary<LifeCell, ArrayList>();
-            return aliveCells;
+        public void setRandom()
+        {
+            Random rnd = new Random();
+
+            foreach (LifeCell cell in lifeCells) {
+                int a = rnd.Next(0,2);
+                if (a == 0)
+                    cell.dies();
+                else
+                    cell.lives();
+            }
         }
 
         public void makeNewGeneration()
@@ -63,9 +72,6 @@ namespace GameOfLife
                     }              
                 }
             }      
-        }
-
-        void setPosition(int x, int y) {
         }
 
         private int getNumOfNeighbors(int x, int y) {
@@ -102,7 +108,5 @@ namespace GameOfLife
 
             return numOfNeighbors;
         }
-
-
     }
 }
